@@ -19,3 +19,7 @@ div.vis-tooltip {
 
   z-index: 5;
 }
+
+div.vis-tooltip.vis-tooltip-sticky {
+  pointer-events: auto;
+}

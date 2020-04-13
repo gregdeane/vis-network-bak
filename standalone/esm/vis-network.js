@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 0.0.0-no-version
- * @date    2020-04-13T05:55:27.570Z
+ * @date    2020-04-13T06:39:16.936Z
  *
  * @copyright (c) 2011-2017 Almende B.V, http://almende.com
  * @copyright (c) 2017-2019 visjs contributors, https://github.com/visjs
@@ -38793,7 +38793,7 @@ var NavigationHandler = /*#__PURE__*/function () {
   return NavigationHandler;
 }();
 
-var css_248z$2 = "div.vis-tooltip {\n  position: absolute;\n  visibility: hidden;\n  padding: 5px;\n  white-space: nowrap;\n\n  font-family: verdana;\n  font-size:14px;\n  color:#000000;\n  background-color: #f5f4ed;\n\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  border-radius: 3px;\n  border: 1px solid #808074;\n\n  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);\n  pointer-events: none;\n\n  z-index: 5;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlBvcHVwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLG1CQUFtQjs7RUFFbkIsb0JBQW9CO0VBQ3BCLGNBQWM7RUFDZCxhQUFhO0VBQ2IseUJBQXlCOztFQUV6Qix1QkFBdUI7RUFDdkIsMEJBQTBCO0VBQzFCLGtCQUFrQjtFQUNsQix5QkFBeUI7O0VBRXpCLDJDQUEyQztFQUMzQyxvQkFBb0I7O0VBRXBCLFVBQVU7QUFDWiIsImZpbGUiOiJQb3B1cC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJkaXYudmlzLXRvb2x0aXAge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgcGFkZGluZzogNXB4O1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuXG4gIGZvbnQtZmFtaWx5OiB2ZXJkYW5hO1xuICBmb250LXNpemU6MTRweDtcbiAgY29sb3I6IzAwMDAwMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjRlZDtcblxuICAtbW96LWJvcmRlci1yYWRpdXM6IDNweDtcbiAgLXdlYmtpdC1ib3JkZXItcmFkaXVzOiAzcHg7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgYm9yZGVyOiAxcHggc29saWQgIzgwODA3NDtcblxuICBib3gtc2hhZG93OiAzcHggM3B4IDEwcHggcmdiYSgwLCAwLCAwLCAwLjIpO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcblxuICB6LWluZGV4OiA1O1xufVxuIl19 */";
+var css_248z$2 = "div.vis-tooltip {\n  position: absolute;\n  visibility: hidden;\n  padding: 5px;\n  white-space: nowrap;\n\n  font-family: verdana;\n  font-size:14px;\n  color:#000000;\n  background-color: #f5f4ed;\n\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  border-radius: 3px;\n  border: 1px solid #808074;\n\n  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);\n  pointer-events: none;\n\n  z-index: 5;\n}\n\ndiv.vis-tooltip.vis-tooltip-sticky {\n  pointer-events: auto;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlBvcHVwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLG1CQUFtQjs7RUFFbkIsb0JBQW9CO0VBQ3BCLGNBQWM7RUFDZCxhQUFhO0VBQ2IseUJBQXlCOztFQUV6Qix1QkFBdUI7RUFDdkIsMEJBQTBCO0VBQzFCLGtCQUFrQjtFQUNsQix5QkFBeUI7O0VBRXpCLDJDQUEyQztFQUMzQyxvQkFBb0I7O0VBRXBCLFVBQVU7QUFDWjs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0QiIsImZpbGUiOiJQb3B1cC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJkaXYudmlzLXRvb2x0aXAge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgcGFkZGluZzogNXB4O1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuXG4gIGZvbnQtZmFtaWx5OiB2ZXJkYW5hO1xuICBmb250LXNpemU6MTRweDtcbiAgY29sb3I6IzAwMDAwMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjRlZDtcblxuICAtbW96LWJvcmRlci1yYWRpdXM6IDNweDtcbiAgLXdlYmtpdC1ib3JkZXItcmFkaXVzOiAzcHg7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgYm9yZGVyOiAxcHggc29saWQgIzgwODA3NDtcblxuICBib3gtc2hhZG93OiAzcHggM3B4IDEwcHggcmdiYSgwLCAwLCAwLCAwLjIpO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcblxuICB6LWluZGV4OiA1O1xufVxuXG5kaXYudmlzLXRvb2x0aXAudmlzLXRvb2x0aXAtc3RpY2t5IHtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG59XG4iXX0= */";
 styleInject(css_248z$2);
 
 /**
@@ -38820,7 +38820,7 @@ var Popup = /*#__PURE__*/function () {
     this.hidden = false; // create the frame
 
     this.frame = document.createElement('div');
-    this.frame.className = 'vis-tooltip';
+    this.frame.className = "vis-tooltip".concat(tooltipSticky === true ? ' vis-tooltip-sticky' : '');
     this.container.appendChild(this.frame);
   }
   /**
@@ -39740,7 +39740,7 @@ var InteractionHandler = /*#__PURE__*/function () {
       if (this.popupObj === undefined && activeNodeId === undefined) {
         var activeEdgeId = this._getActiveEdgeId(pointer);
 
-        this.popupObj = edges[activeEdgeId];
+        this.popupObj = this.body.edges[activeEdgeId];
         popupType = 'edge';
       }
 
@@ -39796,10 +39796,10 @@ var InteractionHandler = /*#__PURE__*/function () {
         }
       } else {
         if (this.selectionHandler.getNodeAt(pointer) === undefined) {
-          var _edges = this.body.edges;
+          var edges = this.body.edges;
 
           if (this.body.edges[popupTargetId] !== undefined) {
-            isPointerOverObject = _edges[popupTargetId].isOverlappingWith(pointerObj);
+            isPointerOverObject = edges[popupTargetId].isOverlappingWith(pointerObj);
           }
         }
       }
