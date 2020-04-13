@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 0.0.0-no-version
- * @date    2020-04-13T07:06:28.383Z
+ * @date    2020-04-13T07:16:51.686Z
  *
  * @copyright (c) 2011-2017 Almende B.V, http://almende.com
  * @copyright (c) 2017-2019 visjs contributors, https://github.com/visjs
@@ -38939,7 +38939,7 @@ var Popup = /*#__PURE__*/function () {
       if (this.tooltipSticky === true) {
         // set/update position first time only
         if (this.left === 0 && this.top === 0) {
-          this.setPosition(enhancedPointer.DOM.left, enhancedPointer.DOM.top);
+          this.setPosition(enhancedPointer.DOM.left + 3, enhancedPointer.DOM.top - 3);
           this.updatePosition();
         } else {
           this.setViewStyle();
@@ -39688,8 +39688,8 @@ var InteractionHandler = /*#__PURE__*/function () {
       return activeNodeId;
     }
   }, {
-    key: "_getActiveEdgeId",
-    value: function _getActiveEdgeId(pointer) {
+    key: "_getOverlappingEdgeId",
+    value: function _getOverlappingEdgeId(pointer) {
       var pointerObj = this.selectionHandler._pointerToPositionObject(pointer);
 
       var edgeIndices = this.body.edgeIndices;
@@ -39735,10 +39735,10 @@ var InteractionHandler = /*#__PURE__*/function () {
       }
 
       if (this.popupObj === undefined && activeNodeId === undefined) {
-        var activeEdgeId = this._getActiveEdgeId(pointer);
+        var overlappingEdgeId = this._getOverlappingEdgeId(pointer);
 
-        if (activeEdgeId !== undefined) {
-          this.popupObj = this.body.edges[activeEdgeId];
+        if (overlappingEdgeId !== undefined) {
+          this.popupObj = this.body.edges[overlappingEdgeId];
           popupType = 'edge';
         }
       }
