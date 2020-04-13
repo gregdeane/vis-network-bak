@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 0.0.0-no-version
- * @date    2020-04-13T06:39:16.936Z
+ * @date    2020-04-13T07:06:28.383Z
  *
  * @copyright (c) 2011-2017 Almende B.V, http://almende.com
  * @copyright (c) 2017-2019 visjs contributors, https://github.com/visjs
@@ -39695,14 +39695,11 @@ var InteractionHandler = /*#__PURE__*/function () {
       var edgeIndices = this.body.edgeIndices;
       var edges = this.body.edges;
       var overlappingEdges = [];
-      var activeEdgeId;
 
       for (var i = 0; i < edgeIndices.length; i++) {
         var edge = edges[edgeIndices[i]];
 
         if (edge.isOverlappingWith(pointerObj) === true) {
-          activeEdgeId = edgeIndices[i];
-
           if (edge.connected === true && edge.getTitle() !== undefined) {
             overlappingEdges.push(edgeIndices[i]);
           }
@@ -39711,10 +39708,10 @@ var InteractionHandler = /*#__PURE__*/function () {
 
 
       if (overlappingEdges.length > 0) {
-        activeEdgeId = edges[overlappingEdges[overlappingEdges.length - 1]].id;
+        return edges[overlappingEdges[overlappingEdges.length - 1]].id;
       }
 
-      return activeEdgeId;
+      return undefined;
     }
     /**
      * Check if there is an element on the given position in the network
@@ -39730,18 +39727,20 @@ var InteractionHandler = /*#__PURE__*/function () {
     value: function _checkShowPopup(pointer) {
       var previousPopupObjId = this.popupObj === undefined ? undefined : this.popupObj.id;
       var popupType = 'node';
-      var activeNodeId;
+
+      var activeNodeId = this._getActiveNodeId(pointer);
 
       if (this.popupObj === undefined) {
-        activeNodeId = this._getActiveNodeId(pointer);
         this.popupObj = this.body.nodes[activeNodeId];
       }
 
       if (this.popupObj === undefined && activeNodeId === undefined) {
         var activeEdgeId = this._getActiveEdgeId(pointer);
 
-        this.popupObj = this.body.edges[activeEdgeId];
-        popupType = 'edge';
+        if (activeEdgeId !== undefined) {
+          this.popupObj = this.body.edges[activeEdgeId];
+          popupType = 'edge';
+        }
       }
 
       if (this.popupObj !== undefined) {
