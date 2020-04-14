@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 0.0.0-no-version
- * @date    2020-04-14T10:38:20.310Z
+ * @date    2020-04-14T12:16:22.898Z
  *
  * @copyright (c) 2011-2017 Almende B.V, http://almende.com
  * @copyright (c) 2017-2019 visjs contributors, https://github.com/visjs
@@ -39072,7 +39072,20 @@
 	      if (options !== undefined) {
 	        // extend all but the values in fields
 	        var fields = ['hideEdgesOnDrag', 'hideEdgesOnZoom', 'hideNodesOnDrag', 'keyboard', 'multiselect', 'selectable', 'selectConnectedEdges'];
-	        selectiveNotDeepExtend(fields, this.options, options); // merge the keyboard options in.
+	        selectiveNotDeepExtend(fields, this.options, options); // remove zoomMin and/or zoomMax if they aren't numbers
+
+	        var _this$options = this.options,
+	            zoomMin = _this$options.zoomMin,
+	            zoomMax = _this$options.zoomMax;
+
+	        if (_typeof_1(zoomMin) !== undefined && typeof zoomMin !== 'number') {
+	          delete this.options.zoomMin;
+	        }
+
+	        if (_typeof_1(zoomMax) !== undefined && typeof zoomMax !== 'number') {
+	          delete this.options.zoomMax;
+	        } // merge the keyboard options in.
+
 
 	        mergeOptions(this.options, options, 'keyboard');
 
@@ -48813,7 +48826,7 @@
 	    hoverConnectedEdges: true,
 	    tooltipSticky: false,
 	    tooltipDelay: [300, 0, 1000, 25],
-	    zoomMin: [0.00001, 0, 10, 0.005],
+	    zoomMin: [0.005, 0, 10, 0.005],
 	    zoomMax: [10, 0, 10, 0.005],
 	    zoomView: true,
 	    zoomSpeed: [1, 0.1, 2, 0.1]

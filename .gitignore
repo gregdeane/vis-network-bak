@@ -37,6 +37,6 @@ coverage/
 /examples/static/
 /examples/thumbnails/
 /peer/
-/standalone/
+# /standalone/
 /styles/
 vis-network-*.tgz
