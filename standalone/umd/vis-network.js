@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 0.0.0-no-version
- * @date    2020-04-15T05:27:59.167Z
+ * @date    2020-04-15T11:07:55.017Z
  *
  * @copyright (c) 2011-2017 Almende B.V, http://almende.com
  * @copyright (c) 2017-2019 visjs contributors, https://github.com/visjs
@@ -39070,17 +39070,7 @@
 	    key: "setOptions",
 	    value: function setOptions(options) {
 	      if (options !== undefined) {
-	        // remove zoomMin and/or zoomMax if they aren't numbers
-	        var zoomMin = options.zoomMin,
-	            zoomMax = options.zoomMax;
-
-	        if (!isNumber(zoomMin) || isNan$2(zoomMin)) {
-	          delete options.zoomMin;
-	        }
-
-	        if (!isNumber(zoomMax) || isNan$2(zoomMax)) {
-	          delete options.zoomMax;
-	        } // extend all but the values in fields
+	        this._checkRemoveZoomMinMax(options); // extend all but the values in fields
 
 
 	        var fields = ['hideEdgesOnDrag', 'hideEdgesOnZoom', 'hideNodesOnDrag', 'keyboard', 'multiselect', 'selectable', 'selectConnectedEdges'];
@@ -39823,6 +39813,30 @@
 
 	      if (isPointerOverObject === false && isPointerOverPopup === false) {
 	        this._hidePopup();
+	      }
+	    }
+	    /**
+	     * Ensure zoom min/max values are acceptable
+	     * If they aren't, remove them from `options`
+	     * @private
+	     */
+
+	  }, {
+	    key: "_checkRemoveZoomMinMax",
+	    value: function _checkRemoveZoomMinMax(options) {
+	      var zoomMin = options.zoomMin,
+	          zoomMax = options.zoomMax;
+
+	      var notValid = function notValid(value) {
+	        return !isNumber(value) || isNan$2(value) || value < 0;
+	      };
+
+	      if (notValid(zoomMin) || zoomMin > zoomMax) {
+	        delete options.zoomMin;
+	      }
+
+	      if (notValid(zoomMax) || zoomMax < zoomMin) {
+	        delete options.zoomMax;
 	      }
 	    }
 	  }]);
