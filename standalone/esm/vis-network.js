@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 0.0.0-no-version
- * @date    2020-04-14T12:16:22.898Z
+ * @date    2020-04-15T05:27:59.167Z
  *
  * @copyright (c) 2011-2017 Almende B.V, http://almende.com
  * @copyright (c) 2017-2019 visjs contributors, https://github.com/visjs
@@ -13994,19 +13994,9 @@ var keys_1 = function (it) {
 
 var keys$6 = keys_1;
 
-function _possibleConstructorReturn(self, call) {
-  if (call && (_typeof_1(call) === "object" || typeof call === "function")) {
-    return call;
-  }
+var create$3 = create;
 
-  return assertThisInitialized(self);
-}
-
-var possibleConstructorReturn = _possibleConstructorReturn;
-
-var getPrototypeOf$3 = getPrototypeOf;
-
-var getPrototypeOf$4 = getPrototypeOf$3;
+var create$4 = create$3;
 
 // https://tc39.github.io/ecma262/#sec-object.setprototypeof
 
@@ -14022,21 +14012,6 @@ var setPrototypeOf = path.Object.setPrototypeOf;
 var setPrototypeOf$1 = setPrototypeOf;
 
 var setPrototypeOf$2 = setPrototypeOf$1;
-
-var getPrototypeOf$5 = createCommonjsModule(function (module) {
-  function _getPrototypeOf(o) {
-    module.exports = _getPrototypeOf = setPrototypeOf$2 ? getPrototypeOf$4 : function _getPrototypeOf(o) {
-      return o.__proto__ || getPrototypeOf$4(o);
-    };
-    return _getPrototypeOf(o);
-  }
-
-  module.exports = _getPrototypeOf;
-});
-
-var create$3 = create;
-
-var create$4 = create$3;
 
 var setPrototypeOf$3 = createCommonjsModule(function (module) {
   function _setPrototypeOf(o, p) {
@@ -14067,6 +14042,31 @@ function _inherits(subClass, superClass) {
 }
 
 var inherits = _inherits;
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof_1(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return assertThisInitialized(self);
+}
+
+var possibleConstructorReturn = _possibleConstructorReturn;
+
+var getPrototypeOf$3 = getPrototypeOf;
+
+var getPrototypeOf$4 = getPrototypeOf$3;
+
+var getPrototypeOf$5 = createCommonjsModule(function (module) {
+  function _getPrototypeOf(o) {
+    module.exports = _getPrototypeOf = setPrototypeOf$2 ? getPrototypeOf$4 : function _getPrototypeOf(o) {
+      return o.__proto__ || getPrototypeOf$4(o);
+    };
+    return _getPrototypeOf(o);
+  }
+
+  module.exports = _getPrototypeOf;
+});
 
 var test$1 = [];
 var nativeSort = test$1.sort; // IE8-
@@ -39064,22 +39064,21 @@ var InteractionHandler = /*#__PURE__*/function () {
     key: "setOptions",
     value: function setOptions(options) {
       if (options !== undefined) {
-        // extend all but the values in fields
-        var fields = ['hideEdgesOnDrag', 'hideEdgesOnZoom', 'hideNodesOnDrag', 'keyboard', 'multiselect', 'selectable', 'selectConnectedEdges'];
-        selectiveNotDeepExtend(fields, this.options, options); // remove zoomMin and/or zoomMax if they aren't numbers
+        // remove zoomMin and/or zoomMax if they aren't numbers
+        var zoomMin = options.zoomMin,
+            zoomMax = options.zoomMax;
 
-        var _this$options = this.options,
-            zoomMin = _this$options.zoomMin,
-            zoomMax = _this$options.zoomMax;
-
-        if (_typeof_1(zoomMin) !== undefined && typeof zoomMin !== 'number') {
-          delete this.options.zoomMin;
+        if (!isNumber(zoomMin) || isNan$2(zoomMin)) {
+          delete options.zoomMin;
         }
 
-        if (_typeof_1(zoomMax) !== undefined && typeof zoomMax !== 'number') {
-          delete this.options.zoomMax;
-        } // merge the keyboard options in.
+        if (!isNumber(zoomMax) || isNan$2(zoomMax)) {
+          delete options.zoomMax;
+        } // extend all but the values in fields
 
+
+        var fields = ['hideEdgesOnDrag', 'hideEdgesOnZoom', 'hideNodesOnDrag', 'keyboard', 'multiselect', 'selectable', 'selectConnectedEdges'];
+        selectiveNotDeepExtend(fields, this.options, options); // merge the keyboard options in.
 
         mergeOptions(this.options, options, 'keyboard');
 
