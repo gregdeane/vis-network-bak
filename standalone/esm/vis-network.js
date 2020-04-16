@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 0.0.0-no-version
- * @date    2020-04-16T06:21:22.939Z
+ * @date    2020-04-16T06:56:26.003Z
  *
  * @copyright (c) 2011-2017 Almende B.V, http://almende.com
  * @copyright (c) 2017-2019 visjs contributors, https://github.com/visjs
@@ -39034,6 +39034,8 @@ var InteractionHandler = /*#__PURE__*/function () {
       },
       navigationButtons: false,
       tooltipDelay: 300,
+      zoomMin: 0.00001,
+      zoomMax: 10,
       zoomView: true,
       zoomSpeed: 1
     };
@@ -39818,18 +39820,20 @@ var InteractionHandler = /*#__PURE__*/function () {
   }, {
     key: "_checkRemoveZoomMinMax",
     value: function _checkRemoveZoomMinMax(options) {
+      var _this4 = this;
+
       var zoomMin = options.zoomMin,
           zoomMax = options.zoomMax;
 
-      var notValid = function notValid(value) {
-        return !isNumber(value) || isNan$2(value) || value < 0;
+      var isValid = function isValid(value) {
+        return isNumber(value) && value >= _this4.defaultOptions.zoomMin && value <= _this4.defaultOptions.zoomMax;
       };
 
-      if (notValid(zoomMin) || zoomMin > zoomMax) {
+      if (!isValid(zoomMin) || zoomMin > zoomMax) {
         delete options.zoomMin;
       }
 
-      if (notValid(zoomMax) || zoomMax < zoomMin) {
+      if (!isValid(zoomMax) || zoomMax < zoomMin) {
         delete options.zoomMax;
       }
     }
