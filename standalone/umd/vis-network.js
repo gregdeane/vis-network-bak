@@ -5,7 +5,7 @@
  * A dynamic, browser-based visualization library.
  *
  * @version 0.0.0-no-version
- * @date    2020-04-15T11:07:55.017Z
+ * @date    2020-04-16T06:21:22.939Z
  *
  * @copyright (c) 2011-2017 Almende B.V, http://almende.com
  * @copyright (c) 2017-2019 visjs contributors, https://github.com/visjs
@@ -38799,7 +38799,7 @@
 	  return NavigationHandler;
 	}();
 
-	var css_248z$2 = "div.vis-tooltip {\n  position: absolute;\n  visibility: hidden;\n  padding: 5px;\n  white-space: nowrap;\n\n  font-family: verdana;\n  font-size:14px;\n  color:#000000;\n  background-color: #f5f4ed;\n\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  border-radius: 3px;\n  border: 1px solid #808074;\n\n  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);\n  pointer-events: none;\n\n  z-index: 5;\n}\n\ndiv.vis-tooltip.vis-tooltip-sticky {\n  pointer-events: auto;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlBvcHVwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLG1CQUFtQjs7RUFFbkIsb0JBQW9CO0VBQ3BCLGNBQWM7RUFDZCxhQUFhO0VBQ2IseUJBQXlCOztFQUV6Qix1QkFBdUI7RUFDdkIsMEJBQTBCO0VBQzFCLGtCQUFrQjtFQUNsQix5QkFBeUI7O0VBRXpCLDJDQUEyQztFQUMzQyxvQkFBb0I7O0VBRXBCLFVBQVU7QUFDWjs7QUFFQTtFQUNFLG9CQUFvQjtBQUN0QiIsImZpbGUiOiJQb3B1cC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJkaXYudmlzLXRvb2x0aXAge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIHZpc2liaWxpdHk6IGhpZGRlbjtcbiAgcGFkZGluZzogNXB4O1xuICB3aGl0ZS1zcGFjZTogbm93cmFwO1xuXG4gIGZvbnQtZmFtaWx5OiB2ZXJkYW5hO1xuICBmb250LXNpemU6MTRweDtcbiAgY29sb3I6IzAwMDAwMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2Y1ZjRlZDtcblxuICAtbW96LWJvcmRlci1yYWRpdXM6IDNweDtcbiAgLXdlYmtpdC1ib3JkZXItcmFkaXVzOiAzcHg7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgYm9yZGVyOiAxcHggc29saWQgIzgwODA3NDtcblxuICBib3gtc2hhZG93OiAzcHggM3B4IDEwcHggcmdiYSgwLCAwLCAwLCAwLjIpO1xuICBwb2ludGVyLWV2ZW50czogbm9uZTtcblxuICB6LWluZGV4OiA1O1xufVxuXG5kaXYudmlzLXRvb2x0aXAudmlzLXRvb2x0aXAtc3RpY2t5IHtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG59XG4iXX0= */";
+	var css_248z$2 = "div.vis-tooltip {\n  position: absolute;\n  visibility: hidden;\n  padding: 5px;\n  white-space: nowrap;\n\n  font-family: verdana;\n  font-size:14px;\n  color:#000000;\n  background-color: #f5f4ed;\n\n  -moz-border-radius: 3px;\n  -webkit-border-radius: 3px;\n  border-radius: 3px;\n  border: 1px solid #808074;\n\n  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);\n  pointer-events: none;\n\n  z-index: 5;\n}\n\n/*\n  the next two selectors make it so the popup is a distance from the\n  mouse cursor while adding a hidden element at the bottom that allows\n  the mouse to move away from the node but still be \"on top\" of the popup\n*/\ndiv.vis-tooltip.vis-tooltip-sticky {\n  pointer-events: auto;\n  margin-top: -5px;\n}\n\ndiv.vis-tooltip.vis-tooltip-sticky:after {\n  position: absolute;\n  content: '';\n  width: 100%;\n  height: 10px;\n  bottom: -10px;\n  left: 0;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlBvcHVwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUNsQixrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLG1CQUFtQjs7RUFFbkIsb0JBQW9CO0VBQ3BCLGNBQWM7RUFDZCxhQUFhO0VBQ2IseUJBQXlCOztFQUV6Qix1QkFBdUI7RUFDdkIsMEJBQTBCO0VBQzFCLGtCQUFrQjtFQUNsQix5QkFBeUI7O0VBRXpCLDJDQUEyQztFQUMzQyxvQkFBb0I7O0VBRXBCLFVBQVU7QUFDWjs7QUFFQTs7OztDQUlDO0FBQ0Q7RUFDRSxvQkFBb0I7RUFDcEIsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0Usa0JBQWtCO0VBQ2xCLFdBQVc7RUFDWCxXQUFXO0VBQ1gsWUFBWTtFQUNaLGFBQWE7RUFDYixPQUFPO0FBQ1QiLCJmaWxlIjoiUG9wdXAuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZGl2LnZpcy10b29sdGlwIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG4gIHBhZGRpbmc6IDVweDtcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcblxuICBmb250LWZhbWlseTogdmVyZGFuYTtcbiAgZm9udC1zaXplOjE0cHg7XG4gIGNvbG9yOiMwMDAwMDA7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmNWY0ZWQ7XG5cbiAgLW1vei1ib3JkZXItcmFkaXVzOiAzcHg7XG4gIC13ZWJraXQtYm9yZGVyLXJhZGl1czogM3B4O1xuICBib3JkZXItcmFkaXVzOiAzcHg7XG4gIGJvcmRlcjogMXB4IHNvbGlkICM4MDgwNzQ7XG5cbiAgYm94LXNoYWRvdzogM3B4IDNweCAxMHB4IHJnYmEoMCwgMCwgMCwgMC4yKTtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG5cbiAgei1pbmRleDogNTtcbn1cblxuLypcbiAgdGhlIG5leHQgdHdvIHNlbGVjdG9ycyBtYWtlIGl0IHNvIHRoZSBwb3B1cCBpcyBhIGRpc3RhbmNlIGZyb20gdGhlXG4gIG1vdXNlIGN1cnNvciB3aGlsZSBhZGRpbmcgYSBoaWRkZW4gZWxlbWVudCBhdCB0aGUgYm90dG9tIHRoYXQgYWxsb3dzXG4gIHRoZSBtb3VzZSB0byBtb3ZlIGF3YXkgZnJvbSB0aGUgbm9kZSBidXQgc3RpbGwgYmUgXCJvbiB0b3BcIiBvZiB0aGUgcG9wdXBcbiovXG5kaXYudmlzLXRvb2x0aXAudmlzLXRvb2x0aXAtc3RpY2t5IHtcbiAgcG9pbnRlci1ldmVudHM6IGF1dG87XG4gIG1hcmdpbi10b3A6IC01cHg7XG59XG5cbmRpdi52aXMtdG9vbHRpcC52aXMtdG9vbHRpcC1zdGlja3k6YWZ0ZXIge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGNvbnRlbnQ6ICcnO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMHB4O1xuICBib3R0b206IC0xMHB4O1xuICBsZWZ0OiAwO1xufVxuIl19 */";
 	styleInject(css_248z$2);
 
 	/**
@@ -38945,7 +38945,7 @@
 	      if (this.tooltipSticky === true) {
 	        // set/update position first time only
 	        if (this.left === 0 && this.top === 0) {
-	          this.setPosition(enhancedPointer.DOM.left + 3, enhancedPointer.DOM.top - 3);
+	          this.setPosition(enhancedPointer.DOM.left, enhancedPointer.DOM.top - 5);
 	          this.updatePosition();
 	        } else {
 	          this.setViewStyle();

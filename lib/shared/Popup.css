@@ -20,6 +20,21 @@ div.vis-tooltip {
   z-index: 5;
 }
 
+/*
+  the next two selectors make it so the popup is a distance from the
+  mouse cursor while adding a hidden element at the bottom that allows
+  the mouse to move away from the node but still be "on top" of the popup
+*/
 div.vis-tooltip.vis-tooltip-sticky {
   pointer-events: auto;
+  margin-top: -5px;
+}
+
+div.vis-tooltip.vis-tooltip-sticky:after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 10px;
+  bottom: -10px;
+  left: 0;
 }
