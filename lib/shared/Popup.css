@@ -27,7 +27,6 @@ div.vis-tooltip {
 */
 div.vis-tooltip.vis-tooltip-sticky {
   pointer-events: auto;
-  margin-top: -20px;
 }
 
 div.vis-tooltip.vis-tooltip-sticky:after {
